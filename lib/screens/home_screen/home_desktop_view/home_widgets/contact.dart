@@ -6,6 +6,9 @@ import 'package:myportforlio_flutter/utils/constants.dart';
 
 import 'package:myportforlio_flutter/utils/dimesions.dart';
 import 'package:myportforlio_flutter/utils/text_style.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../../../app_widget/email_dialog.dart';
 
 class ContactWidget extends StatefulWidget {
   const ContactWidget({super.key});
@@ -107,17 +110,30 @@ class _ContactWidgetState extends State<ContactWidget> {
                                   size: Dimensions.iconSize32(context),
                                 ),
                               ),
-                              // IconButton(
-                              //   onPressed: () => showDialog(
-                              //       context: context,
-                              //       builder: (context) =>
-                              //           const SentEmailDialog()),
-                              //   icon: Icon(
-                              //     IonIcons.mail_open,
-                              //     color: Colors.white,
-                              //     size: Dimensions.iconSize32(context),
-                              //   ),
-                              // ),
+                              IconButton(
+                                // onPressed: () => showDialog(
+                                //     context: context,
+                                //     builder: (context) =>
+                                //         const SentEmailDialog()),
+                                onPressed: () async {
+                                  final Uri emailLaunchUri = Uri(
+                                    scheme: 'mailto',
+                                    path: 'biswajeetdehuri30@gmail.com',
+                                    // query:
+                                    //     encodeQueryParameters(<String, String>{
+                                    //   'subject':
+                                    //       'Example Subject & Symbols are allowed!',
+                                    // }),
+                                  );
+
+                                  await launchUrl(emailLaunchUri);
+                                },
+                                icon: Icon(
+                                  IonIcons.mail_open,
+                                  color: Colors.white,
+                                  size: Dimensions.iconSize32(context),
+                                ),
+                              ),
                               // IconButton(
                               //   onPressed: () => controller.launchWeb(
                               //       link: AppConstant.facebook),

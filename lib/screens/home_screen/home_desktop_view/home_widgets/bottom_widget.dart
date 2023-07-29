@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:myportforlio_flutter/utils/constants.dart';
 import 'package:myportforlio_flutter/utils/dimesions.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget bottomWidget(BuildContext context) {
   return Container(
@@ -21,16 +22,25 @@ Widget bottomWidget(BuildContext context) {
           SizedBox(
             height: Dimensions.height10(context),
           ),
-          Text("biswajeetdehuri30@gmail.com",
-              style: TextStyle(
-                  color: Colors.transparent,
-                  fontSize: Dimensions.font12(context),
-                  shadows: const [
-                    Shadow(color: Colors.white, offset: Offset(0, -4))
-                  ],
-                  decoration: TextDecoration.underline,
-                  decorationThickness: 3,
-                  decorationColor: Colors.white)),
+          TextButton(
+              onPressed: () async {
+                final Uri emailLaunchUri = Uri(
+                  scheme: 'mailto',
+                  path: 'biswajeetdehuri20@gmail.com',
+                );
+
+                await launchUrl(emailLaunchUri);
+              },
+              child: Text("biswajeetdehuri30@gmail.com",
+                  style: TextStyle(
+                      color: Colors.transparent,
+                      fontSize: Dimensions.font12(context),
+                      shadows: const [
+                        Shadow(color: Colors.white, offset: Offset(0, -4))
+                      ],
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 3,
+                      decorationColor: Colors.white))),
         ],
       ));
 }
