@@ -27,7 +27,7 @@ class _MobileIntroductionWidgetState extends State<MobileIntroduction> {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: Dimensions.width20(context)),
         width: Dimensions.screenWidth(context),
-        height: Dimensions.screenHeight(context) * 1.2,
+        height: Dimensions.screenHeight(context) * 1.25,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,6 +91,36 @@ class _MobileIntroductionWidgetState extends State<MobileIntroduction> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: Dimensions.height10(context),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      controller.launchWeb(
+                          link:
+                              "https://drive.google.com/file/d/1dzq2Q1AXS3JrHp-bkXAO2aAwdTNnTG_D/view?usp=drive_link");
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(Dimensions.height5(context)),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                              Dimensions.radius15(context) / 2),
+                          border: Border.all(color: Colors.grey, width: 2)),
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        Text(
+                          "My Resume",
+                          style: MyTextStyle.normalsmall(context)
+                              .copyWith(color: Colors.grey),
+                        ),
+                        const SizedBox(
+                          width: 3,
+                        ),
+                        Icon(Icons.link,
+                            color: Colors.grey,
+                            size: Dimensions.iconSize16(context))
+                      ]),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -115,9 +145,12 @@ class _MobileIntroductionWidgetState extends State<MobileIntroduction> {
                     ),
             ),
             SizedBox(
-              height: Dimensions.height30(context),
+              height: Dimensions.height10(context),
             ),
             arrowDownWidget(context),
+            SizedBox(
+              height: Dimensions.height10(context),
+            ),
             Container(
               padding: EdgeInsets.all(Dimensions.height10(context)),
               decoration: BoxDecoration(
