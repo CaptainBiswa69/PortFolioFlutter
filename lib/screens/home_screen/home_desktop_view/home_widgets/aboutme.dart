@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lottie/lottie.dart';
 
 import 'package:myportforlio_flutter/data/skills_data.dart';
-import 'package:myportforlio_flutter/utils/app_color.dart';
 
 import 'package:myportforlio_flutter/utils/constants.dart';
 import 'package:myportforlio_flutter/utils/dimesions.dart';
@@ -33,12 +31,12 @@ class AboutMeWidget extends StatelessWidget {
                     Text(
                       "About Me",
                       style: MyTextStyle.label(context),
-                    )
-                        .animate(onPlay: (controller) => controller.repeat())
-                        .shimmer(duration: 1000.ms, color: AppColor.purple)
-                        .animate()
-                        .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
-                        .slide(),
+                    ),
+                    // .animate(onPlay: (controller) => controller.repeat())
+                    // .shimmer(duration: 1000.ms, color: AppColor.purple)
+                    // .animate()
+                    // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
+                    // .slide(),
                     SizedBox(
                       height: Dimensions.height15(context),
                     ),
@@ -70,12 +68,12 @@ class AboutMeWidget extends StatelessWidget {
                 Text(
                   "Navigating Expertise",
                   style: MyTextStyle.label(context),
-                )
-                    .animate(onPlay: (controller) => controller.repeat())
-                    .shimmer(duration: 1000.ms, color: AppColor.purple)
-                    .animate()
-                    .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
-                    .slide(),
+                ),
+                // .animate(onPlay: (controller) => controller.repeat())
+                // .shimmer(duration: 1000.ms, color: AppColor.purple)
+                // .animate()
+                // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
+                // .slide(),
                 Center(
                   child: SizedBox(
                     height: Dimensions.screenHeight(context) * 0.25,

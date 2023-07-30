@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import 'package:myportforlio_flutter/data/project_data.dart';
 import 'package:myportforlio_flutter/screens/home_screen/home_controller.dart';
-import 'package:myportforlio_flutter/utils/app_color.dart';
 import 'package:myportforlio_flutter/utils/constants.dart';
 import 'package:myportforlio_flutter/utils/dimesions.dart';
 import 'package:myportforlio_flutter/utils/text_style.dart';
@@ -40,12 +38,12 @@ class _MobileProjectWidgetState extends State<MobileProjectWidget> {
                     Text(
                       "As A Flutter Developer",
                       style: MyTextStyle.label(context),
-                    )
-                        .animate(onPlay: (controller) => controller.repeat())
-                        .shimmer(duration: 1000.ms, color: AppColor.purple)
-                        .animate()
-                        .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
-                        .slide(),
+                    ),
+                    // .animate(onPlay: (controller) => controller.repeat())
+                    // .shimmer(duration: 1000.ms, color: AppColor.purple)
+                    // .animate()
+                    // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
+                    // .slide(),
                     Text(
                       "(With over 2 year experience)",
                       style: MyTextStyle.normalsmall(context),

@@ -7,7 +7,7 @@ List<Map<String, dynamic>> expData = [
     "address": "https://www.bottomstreet.com/",
   },
   {
-    "year": "2023 (July) - 2022(August)",
+    "year": "2023 (July) - 2023(August)",
     "image": "assets/company/walkingPal.png",
     "role": "Freelance Developer",
     "company": "WalkingPal",

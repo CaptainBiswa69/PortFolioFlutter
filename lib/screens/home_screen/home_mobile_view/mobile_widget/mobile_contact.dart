@@ -6,6 +6,7 @@ import 'package:myportforlio_flutter/utils/constants.dart';
 
 import 'package:myportforlio_flutter/utils/dimesions.dart';
 import 'package:myportforlio_flutter/utils/text_style.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MobileContactWidget extends StatefulWidget {
   const MobileContactWidget({super.key});
@@ -106,15 +107,27 @@ class _MobileContactWidgetState extends State<MobileContactWidget> {
                                   size: Dimensions.iconSize32(context),
                                 ),
                               ),
-                              // IconButton(
-                              //   onPressed: () => controller.launchWeb(
-                              //       link: AppConstant.gmail),
-                              //   icon: Icon(
-                              //     IonIcons.mail_open,
-                              //     color: Colors.white,
-                              //     size: Dimensions.iconSize32(context),
-                              //   ),
-                              // ),
+                              IconButton(
+                                // onPressed: () => controller.launchWeb(
+                                //     link: AppConstant.gmail),
+                                onPressed: () async {
+                                  final Uri emailLaunchUri = Uri(
+                                    scheme: 'mailto',
+                                    path: 'biswajeetdehuri30@gmail.com',
+                                    // query:
+                                    //     encodeQueryParameters(<String, String>{
+                                    //   'subject':
+                                    //       'Example Subject & Symbols are allowed!',
+                                    // }),
+                                  );
+                                  await launchUrl(emailLaunchUri);
+                                },
+                                icon: Icon(
+                                  IonIcons.mail_open,
+                                  color: Colors.white,
+                                  size: Dimensions.iconSize32(context),
+                                ),
+                              ),
                               // IconButton(
                               //   onPressed: () => controller.launchWeb(
                               //       link: AppConstant.facebook),

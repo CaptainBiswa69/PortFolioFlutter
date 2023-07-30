@@ -8,7 +8,6 @@ import 'package:myportforlio_flutter/utils/dimesions.dart';
 import 'package:myportforlio_flutter/utils/text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../app_widget/email_dialog.dart';
 
 class ContactWidget extends StatefulWidget {
   const ContactWidget({super.key});

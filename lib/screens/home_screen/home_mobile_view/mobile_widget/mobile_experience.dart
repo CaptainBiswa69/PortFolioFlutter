@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import 'package:lottie/lottie.dart';
 import 'package:myportforlio_flutter/data/exp_data.dart';
 import 'package:myportforlio_flutter/screens/home_screen/home_controller.dart';
-import 'package:myportforlio_flutter/utils/app_color.dart';
 import 'package:myportforlio_flutter/utils/dimesions.dart';
 import 'package:myportforlio_flutter/utils/text_style.dart';
 
@@ -26,11 +24,11 @@ class MobileExperiencesWidget extends GetView<HomeController> {
                 "Experiences",
                 style: MyTextStyle.label(context),
               )
-                  .animate(onPlay: (controller) => controller.repeat())
-                  .shimmer(duration: 1000.ms, color: AppColor.purple)
-                  .animate()
-                  .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
-                  .slide(),
+                  // .animate(onPlay: (controller) => controller.repeat())
+                  // .shimmer(duration: 1000.ms, color: AppColor.purple)
+                  // .animate()
+                  // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
+                  // .slide(),
             ),
             const Expanded(
               child: Divider(

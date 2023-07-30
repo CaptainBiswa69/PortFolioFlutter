@@ -37,11 +37,11 @@ class MyTextStyle {
         fontWeight: FontWeight.w400,
         fontSize: Dimensions.font26(context) * 0.8,
         shadows: [
-          const Shadow(
-            offset: Offset(2, 2),
-            color: Color.fromARGB(255, 156, 39, 176),
-            blurRadius: 2,
-          )
+          // const Shadow(
+          //   offset: Offset(2, 2),
+          //   color: Colors.blue,
+          //   blurRadius: 2,
+          // )
         ],
         color: Colors.white);
   }
