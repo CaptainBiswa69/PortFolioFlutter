@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,38 +13,42 @@ class ExperiencesWidget extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: Dimensions.screenWidth(context) * 0.9,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(
-          children: [
-            Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(Dimensions.height10(context)),
-                child: Text(
-                  "Experiences",
-                  style: MyTextStyle.label(context),
-                )
-                // .animate(onPlay: (controller) => controller.repeat())
-                // .shimmer(duration: 1000.ms, color: AppColor.purple)
-                // .animate()
-                // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
-                // .slide(),
+    return Center(
+      child: SizedBox(
+        width: Dimensions.screenWidth(context) * 0.9,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(
+            children: [
+              Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(Dimensions.height10(context)),
+                  child: Text(
+                    "Experiences",
+                    style: MyTextStyle.label(context),
+                  )
+                  // .animate(onPlay: (controller) => controller.repeat())
+                  // .shimmer(duration: 1000.ms, color: AppColor.purple)
+                  // .animate()
+                  // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
+                  // .slide(),
+                  ),
+              const Expanded(
+                child: Divider(
+                  color: Colors.white,
                 ),
-            const Expanded(
-              child: Divider(
-                color: Colors.white,
-              ),
-            )
-          ],
-        ),
-        SizedBox(
-          height: Dimensions.height30(context),
-        ),
-        Row(
-          children: List.generate(
-              expData.length,
-              (index) => SizedBox(
+              )
+            ],
+          ),
+          SizedBox(
+            height: Dimensions.height30(context),
+          ),
+          SizedBox(
+            height: Dimensions.screenHeight(context) * 0.30,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: expData.length,
+                itemBuilder: (context, index) {
+                  return SizedBox(
                     width: Dimensions.screenWidth(context) * 0.3,
                     child: Card(
                         color: Colors.white12,
@@ -91,22 +96,25 @@ class ExperiencesWidget extends GetView<HomeController> {
                             ),
                           ],
                         )),
-                  )),
-        ),
-        Row(
-          children: [
-            Expanded(
-                child: LottieBuilder.asset("assets/animations/show_case.json")),
-            SizedBox(
-              width: Dimensions.screenWidth(context) * 0.4,
-              child: Text(
-                "Let me help you to build wonderful apps.",
-                style: MyTextStyle.heading(context),
-              ),
-            )
-          ],
-        )
-      ]),
+                  );
+                }),
+          ),
+          Row(
+            children: [
+              Expanded(
+                  child:
+                      LottieBuilder.asset("assets/animations/show_case.json")),
+              SizedBox(
+                width: Dimensions.screenWidth(context) * 0.4,
+                child: Text(
+                  "Let me help you to build wonderful apps.",
+                  style: MyTextStyle.heading(context),
+                ),
+              )
+            ],
+          )
+        ]),
+      ),
     );
   }
 }

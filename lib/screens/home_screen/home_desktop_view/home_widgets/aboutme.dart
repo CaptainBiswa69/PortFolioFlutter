@@ -43,6 +43,7 @@ class AboutMeWidget extends StatelessWidget {
                     Text(
                       AppConstant.introductionText2,
                       style: MyTextStyle.normalsmall(context),
+                      textAlign: TextAlign.justify,
                     )
                   ])),
           SizedBox(

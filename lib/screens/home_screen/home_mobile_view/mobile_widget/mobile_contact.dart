@@ -141,7 +141,7 @@ class _MobileContactWidgetState extends State<MobileContactWidget> {
                                 onPressed: () => controller.launchWeb(
                                     link: AppConstant.viber),
                                 icon: Icon(
-                                  FontAwesome.viber,
+                                  FontAwesome.viber_brand,
                                   color: Colors.white,
                                   size: Dimensions.iconSize32(context),
                                 ),

@@ -29,92 +29,94 @@ class _ProjectWidgetState extends State<ProjectWidget> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-        builder: (controller) => SizedBox(
-              width: Dimensions.screenWidth(context) * 0.9,
-              height: Dimensions.screenHeight(context) * 0.75,
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "As A Flutter Developer",
-                      style: MyTextStyle.label(context),
-                    ),
-                    // .animate(onPlay: (controller) => controller.repeat())
-                    // .shimmer(duration: 1000.ms, color: AppColor.purple)
-                    // .animate()
-                    // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
-                    // .slide(),
-                    Text(
-                      "(With over 2 year experience)",
-                      style: MyTextStyle.normalsmall(context),
-                    ),
-                    SizedBox(
-                      height: Dimensions.height10(context),
-                    ),
-                    Text(AppConstant.projectText,
-                        style: MyTextStyle.normalsmall(context)),
-                    SizedBox(
-                      height: Dimensions.height10(context),
-                    ),
-                    Text(
-                      "Some Of My Project Mile-Stones",
-                      style: MyTextStyle.label(context),
-                    ),
-                    SizedBox(
-                      height: Dimensions.height10(context),
-                    ),
-                    SizedBox(
-                      height: Dimensions.screenHeight(context) * 0.45,
-                      child: PageView(
-                          controller: _pageController,
-                          onPageChanged: (page) {
-                            setState(() {
-                              selectedPage = page;
-                            });
-                          },
-                          children: [
-                            Row(
-                              children: List.generate(
-                                  3,
-                                  (index) => projectItems(
-                                      context,
-                                      projectData[index]["image"],
-                                      projectData[index]["name"],
-                                      projectData[index]["Source"],
-                                      projectData[index]["Description"],
-                                      projectData[index]["Duration"],
-                                      controller)),
-                            ),
-                            Row(
-                              children: List.generate(
-                                  2,
-                                  (index) => projectItems(
-                                      context,
-                                      projectData[index + 3]["image"],
-                                      projectData[index + 3]["name"],
-                                      projectData[index + 3]["Source"],
-                                      projectData[index + 3]["Description"],
-                                      projectData[index + 3]["Duration"],
-                                      controller)),
-                            ),
-                          ]),
-                    ),
-                    SizedBox(
-                      height: Dimensions.height10(context),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: PageViewDotIndicator(
-                        currentItem: selectedPage,
-                        count: 2,
-                        unselectedColor: Colors.grey,
-                        selectedColor: Colors.white,
-                        duration: const Duration(milliseconds: 200),
-                        boxShape: BoxShape.circle,
+        builder: (controller) => Center(
+              child: SizedBox(
+                width: Dimensions.screenWidth(context) * 0.9,
+                height: Dimensions.screenHeight(context) * 0.75,
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "As A Flutter Developer",
+                        style: MyTextStyle.label(context),
                       ),
-                    ),
-                  ]),
+                      // .animate(onPlay: (controller) => controller.repeat())
+                      // .shimmer(duration: 1000.ms, color: AppColor.purple)
+                      // .animate()
+                      // .fadeIn(duration: 1200.ms, curve: Curves.easeOutQuad)
+                      // .slide(),
+                      Text(
+                        "(With over 2 year experience)",
+                        style: MyTextStyle.normalsmall(context),
+                      ),
+                      SizedBox(
+                        height: Dimensions.height10(context),
+                      ),
+                      Text(AppConstant.projectText,
+                          style: MyTextStyle.normalsmall(context)),
+                      SizedBox(
+                        height: Dimensions.height10(context),
+                      ),
+                      Text(
+                        "Some Of My Project Mile-Stones",
+                        style: MyTextStyle.label(context),
+                      ),
+                      SizedBox(
+                        height: Dimensions.height10(context),
+                      ),
+                      SizedBox(
+                        height: Dimensions.screenHeight(context) * 0.45,
+                        child: PageView(
+                            controller: _pageController,
+                            onPageChanged: (page) {
+                              setState(() {
+                                selectedPage = page;
+                              });
+                            },
+                            children: [
+                              Row(
+                                children: List.generate(
+                                    3,
+                                    (index) => projectItems(
+                                        context,
+                                        projectData[index]["image"],
+                                        projectData[index]["name"],
+                                        projectData[index]["Source"],
+                                        projectData[index]["Description"],
+                                        projectData[index]["Duration"],
+                                        controller)),
+                              ),
+                              Row(
+                                children: List.generate(
+                                    2,
+                                    (index) => projectItems(
+                                        context,
+                                        projectData[index + 3]["image"],
+                                        projectData[index + 3]["name"],
+                                        projectData[index + 3]["Source"],
+                                        projectData[index + 3]["Description"],
+                                        projectData[index + 3]["Duration"],
+                                        controller)),
+                              ),
+                            ]),
+                      ),
+                      SizedBox(
+                        height: Dimensions.height10(context),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: PageViewDotIndicator(
+                          currentItem: selectedPage,
+                          count: 2,
+                          unselectedColor: Colors.grey,
+                          selectedColor: Colors.white,
+                          duration: const Duration(milliseconds: 200),
+                          boxShape: BoxShape.circle,
+                        ),
+                      ),
+                    ]),
+              ),
             ));
   }
 }

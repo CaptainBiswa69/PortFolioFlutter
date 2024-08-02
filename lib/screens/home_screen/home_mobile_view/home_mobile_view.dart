@@ -9,7 +9,7 @@ import 'package:myportforlio_flutter/screens/home_screen/home_mobile_view/mobile
 import 'package:myportforlio_flutter/screens/home_screen/home_mobile_view/mobile_widget/mobile_introduction.dart';
 import 'package:myportforlio_flutter/screens/home_screen/home_mobile_view/mobile_widget/mobile_project.dart';
 import 'package:myportforlio_flutter/utils/app_color.dart';
-import 'package:myportforlio_flutter/utils/dimesions.dart';
+import '../../../utils/dimesions.dart';
 import '../home_desktop_view/home_widgets/bottom_widget.dart';
 
 class HomeMobileView extends StatefulWidget {
@@ -52,20 +52,18 @@ class _HomeMobileViewState extends State<HomeMobileView> {
                   decoration: BoxDecoration(gradient: AppColor.backGroundGr),
                   child: Scaffold(
                     backgroundColor: Colors.transparent,
-                    body: SingleChildScrollView(
+                    body: ListView(
                       controller: _scrollController,
                       physics: const ScrollPhysics(),
-                      child: Column(
-                        children: [
-                          const MobileIntroduction(),
-                          const MobileAboutMeWidget(),
-                          const MobileAboutMe2Widget(),
-                          const MobileProjectWidget(),
-                          const MobileExperiencesWidget(),
-                          const MobileContactWidget(),
-                          bottomWidget(context),
-                        ],
-                      ),
+                      children: [
+                        const MobileIntroduction(),
+                        const MobileAboutMeWidget(),
+                        const MobileAboutMe2Widget(),
+                        const MobileProjectWidget(),
+                        const MobileExperiencesWidget(),
+                        const MobileContactWidget(),
+                        bottomWidget(context),
+                      ],
                     ),
                   ),
                 )

@@ -8,7 +8,6 @@ import 'package:myportforlio_flutter/utils/dimesions.dart';
 import 'package:myportforlio_flutter/utils/text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class ContactWidget extends StatefulWidget {
   const ContactWidget({super.key});
 
@@ -146,7 +145,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                 onPressed: () => controller.launchViber(
                                     link: AppConstant.viber),
                                 icon: Icon(
-                                  FontAwesome.viber,
+                                  FontAwesome.viber_brand,
                                   color: Colors.white,
                                   size: Dimensions.iconSize32(context),
                                 ),
